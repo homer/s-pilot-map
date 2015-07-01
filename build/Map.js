@@ -17,11 +17,13 @@ var Map = React.createClass({displayName: "Map",
       attribution: '<a href="http://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>'
     });
 
+    var initLat = 47.558272;
+    var initLng = -122.371553;
     var map = L.map('map')
                 .addLayer(mapboxTiles)
-                .setView([47.558272,-122.371553], 13);
+                .setView([initLat,initLng], 13);
 
-    var marker = L.marker([47.562211,-122.378076]).addTo(map);
+    var marker = L.marker([initLat,initLng]).addTo(map);
     marker.bindPopup("<b>Hello Socrata!</b><br>F*ck Google Maps, Leaflet is awesome.");
 
     var circle = L.circle([47.578309,-122.353357], 200, {
@@ -29,5 +31,12 @@ var Map = React.createClass({displayName: "Map",
         fillColor: '#f03',
         fillOpacity: 0.5
     }).addTo(map);
+
+    circle.on('click',function(){
+      setInterval(function(){
+        initLat += parseFloat(0.00001);
+        marker.setLatLng([initLat,initLng]).update();
+      }, 17);
+    });
   }
 });
