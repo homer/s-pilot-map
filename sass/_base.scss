@@ -9,6 +9,11 @@ body {
 button:focus, .btn:focus, button:active, .btn:active,
 a:focus, a:active {outline:0;}
 
+#title-section {
+  .btn-default {
+    margin-right: 10px;
+  }
+}
 .page-title i{
   color:#6CB2E7;
 }
