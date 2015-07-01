@@ -1,0 +1,43 @@
+.navbar {
+  padding:10px;
+}
+.navbar-inverse {
+  background-color: $c-primary;
+  border: none;
+}
+.navbar-inverse .navbar-collapse {
+  border-color:transparent;
+}
+.navbar-inverse .navbar-nav>li>a {
+  color:white;
+  margin:10px;
+  padding:5px;
+  border-radius: 4px;
+  transition: all 0.4s;
+}
+.navbar-inverse .navbar-nav>li>a:hover {
+  background-color: $c-primary-light;
+}
+.navbar-inverse .navbar-nav .active a {
+  background-color: $c-primary-very-light;
+}
+.navbar-inverse .navbar-nav .active a:hover {
+  background-color: $c-primary-very-light;
+}
+.navbar-inverse .navbar-brand {
+  color: white;
+  font-weight: 300;
+  font-size: 2em;
+  letter-spacing: 1px;
+  background-image: url("../imgs/seattle-logo.png");
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  padding-left: 60px;
+}
+.navbar-inverse .navbar-toggle {
+  background-color: $c-primary;
+  border-color: $c-primary-very-light;
+}
+.navbar-inverse .navbar-toggle:hover {
+  background-color: $c-primary-light;
+}

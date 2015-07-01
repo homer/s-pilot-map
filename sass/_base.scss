@@ -1,0 +1,21 @@
+* {
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  font-family: $type-primary, sans-serif;
+  color:$c-app-black;
+}
+
+button:focus, .btn:focus, button:active, .btn:active,
+a:focus, a:active {outline:0;}
+
+.socrata-footer-logo {
+  display: inline-block;
+  width:100px;
+  height: 23px;
+  background-image: url("../imgs/socrata-logo.png");
+  background-repeat: no-repeat;
+  background-size:100px 23px;
+  filter: grayscale(100%);
+  opacity: 0.7;
+}

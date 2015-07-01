@@ -1,0 +1,135 @@
+/*
+Base - are the defaults.
+Layout - divide the page into sections. l-
+Module - are the reusable, modular parts of our design. .module-
+State - are ways to describe how our modules or layouts will look when in a particular state. is-
+Theme - are similar to state rules in that they describe how modules or layouts might look.
+ */
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500);
+* {
+  -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #4A4A4A; }
+
+button:focus, .btn:focus, button:active, .btn:active,
+a:focus, a:active {
+  outline: 0; }
+
+.socrata-footer-logo {
+  display: inline-block;
+  width: 100px;
+  height: 23px;
+  background-image: url("../imgs/socrata-logo.png");
+  background-repeat: no-repeat;
+  background-size: 100px 23px;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  opacity: 0.7; }
+
+body {
+  padding-top: 70px; }
+
+.row-filter, .row-footer {
+  padding: 15px 0; }
+
+.row-map, .row-filter, .row-footer {
+  background-color: #d3d2ce; }
+
+.is-editable:hover {
+  cursor: pointer; }
+
+h1 span.btn-edit {
+  display: none; }
+
+h1:hover span.btn-edit {
+  display: inline-block; }
+
+.navbar {
+  padding: 10px; }
+
+.navbar-inverse {
+  background-color: #3887BE;
+  border: none; }
+
+.navbar-inverse .navbar-collapse {
+  border-color: transparent; }
+
+.navbar-inverse .navbar-nav > li > a {
+  color: white;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 4px;
+  -webkit-transition: all 0.4s;
+          transition: all 0.4s; }
+
+.navbar-inverse .navbar-nav > li > a:hover {
+  background-color: #4793c9; }
+
+.navbar-inverse .navbar-nav .active a {
+  background-color: #62a3d1; }
+
+.navbar-inverse .navbar-nav .active a:hover {
+  background-color: #62a3d1; }
+
+.navbar-inverse .navbar-brand {
+  color: white;
+  font-weight: 300;
+  font-size: 2em;
+  letter-spacing: 1px;
+  background-image: url("../imgs/seattle-logo.png");
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  padding-left: 60px; }
+
+.navbar-inverse .navbar-toggle {
+  background-color: #3887BE;
+  border-color: #62a3d1; }
+
+.navbar-inverse .navbar-toggle:hover {
+  background-color: #4793c9; }
+
+.modal {
+  border-radius: 0; }
+
+.modal-header {
+  border-bottom: none;
+  background-color: aliceblue; }
+
+.media-object {
+  background-image: url("../imgs/icon-sprites.png");
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 50px;
+  height: 50px; }
+  .media-object.filter {
+    background-position: 0 0; }
+  .media-object.map {
+    background-position: 0 -100px; }
+  .media-object.table {
+    background-position: 0 -150px; }
+
+.detail-stats {
+  background-color: #726c70;
+  color: white; }
+  .detail-stats .table {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 20px; }
+    .detail-stats .table tr:first-child td {
+      border-top: none; }
+    .detail-stats .table td {
+      border-top-color: #928D87; }
+  .detail-stats a {
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: #7DC7FF; }
+
+.map-header {
+  padding-top: 0;
+  padding: 10px;
+  background-color: #FFF; }
+
+#map {
+  height: 500px; }

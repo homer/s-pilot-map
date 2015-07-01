@@ -1,0 +1,5 @@
+// Editables
+.is-editable:hover { cursor: pointer; }
+
+h1 span.btn-edit { display: none; }
+h1:hover span.btn-edit { display: inline-block; }

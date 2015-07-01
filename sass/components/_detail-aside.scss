@@ -1,0 +1,21 @@
+.detail-stats {
+  background-color: #726c70;
+  color:white;
+  .table {
+    padding-left:0;
+    padding-right:0;
+    margin-top: 20px;
+    tr:first-child td {
+      border-top:none;
+    }
+    td {
+      border-top-color: #928D87;
+
+    }
+  }
+  a{
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: #7DC7FF;
+  }
+}
