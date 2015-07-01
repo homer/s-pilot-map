@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/app.css">
 
+  <!-- ReactJS -->
+  <script src="https://fb.me/react-0.13.3.min.js"></script>
+
   <!-- MapBox -->
   <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
@@ -60,85 +63,14 @@
 
     <div class="container-fluid">
       <div class="upper-section row">
-        <div class="col-md-7 col-md-offset-1">
-          <div>
-            <h1 class="is-editable">
-              <i class="fa fa-globe" style="color:#6CB2E7;"></i> Street Sweepers in Seattle
-              <span class="btn-edit glyphicon glyphicon-pencil small"></span>
-            </h1>
-            <p class="lead">This is a map of showing locations of street sweepers in Seattle. The map is updated every minute to show you the latest location.</p>
-            <button type="button" class="btn btn-default"
-                                  data-toggle="modal" data-target="#modalEmbed">EMBED</button>
-            <button type="button" class="btn btn-warning"
-                                  data-toggle="modal" data-target="#modalSubsribe">SUBSCRIBE</button>
-            <button type="button" class="btn btn-link"><i class="fa fa-twitter"></i></button>
-            <button type="button" class="btn btn-link"><i class="fa fa-facebook"></i></button>
-          </div>
-        </div> <!-- col- 8 -->
-        <div class="col-md-4 detail-stats">
-          <table class="table">
-            <tbody>
-              <tr>
-                <td>UPDATED</td>
-                <td>8:34 am</td>
-              </tr>
-              <tr>
-                <td>VISITS</td>
-                <td>83,874</td>
-              </tr>
-              <tr>
-                <td>PERMISSION</td>
-                <td>Public</td>
-              </tr>
-              <tr>
-                <td>PUBLISHER</td>
-                <td><a href="#">City of Seattle</a></td>
-              </tr>
-              <tr>
-                <td>SOURCE DATASET</td>
-                <td><a href="#">Seattle Streetsweepers</a></td>
-              </tr>
-              <tr>
-                <td>RELATED</td>
-                <td>
-                  <a href="" data-toggle="modal" data-target="#modalPulse">4 Pulses</a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div> <!-- col-4 -->
+        <div id="title-section" class="col-md-7 col-md-offset-1"></div>
+        <div id="detailstats-section" class="col-md-4 detail-stats"></div>
       </div> <!-- upper-section row -->
 
       <div class="lower-section">
-        <div class="row row-filter">
-          <div class="dropdown col-md-10 col-md-offset-1">
-            Neighborhood
-            <button type="button" id="dropdownMenu1" class="btn btn-default dropdown-toggle"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="true">
-              Filters
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li class="dropdown-header">Dropdown header</li>
-              <li><a href="#">North Seattle</a></li>
-              <li><a href="#">East Seattle</a></li>
-              <li><a href="#">South Seattle</a></li>
-              <li><a href="#">West Seattle</a></li>
-            </ul>
-          </div>
-        </div> <!-- row-filter row -->
 
-        <div class="row row-map">
-          <div class="map-container col-md-10 col-md-offset-1">
-            <div class="map-header">
-              <h3>Street Sweepers in Seattle</h3>
-              <p>Streetsweepers by location. You can select a neighboorhood to see only street sweepers there, of select and track a streetsweeper by clickng it.</p>
-            </div>
-            <div id="map"></div>
-          </div>
-        </div>
+        <div id="filter-section" class="row row-filter"></div>
+        <div id="map-section" class="row row-map"></div>
 
         <div class="row row-footer">
           <div class="col-md-3 col-md-offset-1">
@@ -153,140 +85,24 @@
 
     </div> <!-- container -->
 
-  <!-- Related Pulse Modal -->
-  <div class="modal fade" id="modalPulse" tabindex="-1" role="dialog" aria-labelledby="modalPulseLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="modalPulseLabel">Related Pulses</h4>
-        </div>
-        <div class="modal-body">
-          <div class="media">
-            <div class="media-left">
-              <a href="#" class="media-object map"></a>
-            </div>
-            <div class="media-body">
-              <h4 class="media-heading map">Street Signs</h4>
-              <p>All street signs including parking, stop and bike route.</p>
-            </div>
-          </div> <!-- media -->
-          <div class="media">
-            <div class="media-left">
-              <a href="#" class="media-object filter"></a>
-            </div>
-            <div class="media-body">
-              <h4 class="media-heading">Downtown Streets</h4>
-              <p>Vehicle traffic volumes for arterial streets in Seattle based on spot studies that have been adjusted for seasonal variation. To provide a high level view of traffic volumes on major streets in Seattle...</p>
-            </div>
-          </div> <!-- media -->
-          <div class="media">
-            <div class="media-left">
-              <a href="#" class="media-object map"></a>
-            </div>
-            <div class="media-body">
-              <h4 class="media-heading">Street Use Vendor Permits</h4>
-              <p>Currently displays the Street Use Vendor Permits that are required to go through the public notice process.</p>
-            </div>
-          </div> <!-- media -->
-          <div class="media">
-            <div class="media-left">
-              <a href="#" class="media-object table"></a>
-            </div>
-            <div class="media-body">
-              <h4 class="media-heading">Seattle Traffic Cameras</h4>
-              <p>Traffic caneras in Seattle owned by SDOT and WSDOT</p>
-            </div>
-          </div> <!-- media -->
-        </div> <!-- modal-body -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div> <!-- Related Pulse Modal -->
-
-  <!-- Embed Modal -->
-  <div class="modal fade" id="modalEmbed" tabindex="-1" role="dialog" aria-labelledby="modalEmbedLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="modalEmbedLabel">Embed this Pulse</h4>
-          <p>You can embed this Pulse to any page by simply coping the iframe below.</p>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <div class="input-group">
-                <input type="text" class="form-control" id="pulseName"
-                        value='<iframe width="560" height="315" src="https://www.socrata.com/embed/7rDsRXj9-cU" frameborder="0" allowfullscreen></iframe>'>
-                <span class="input-group-btn">
-                  <button class="btn btn-default" type="button">
-                    <span class="glyphicon glyphicon-copy"></span> Copy
-                  </button>
-                </span>
-              </div>
-            </div>
-          </form>
-        </div> <!-- modal-body -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div> <!-- Embed Modal -->
-
-  <!-- Subsription Modal -->
-  <div class="modal fade" id="modalSubsribe" tabindex="-1" role="dialog" aria-labelledby="modalSubsribeLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="modalSubsribeLabel">Subsribe to this Pulse</h4>
-          <p>You can subsribe to this Pulse by using the subsription key below.</p>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="pulseName">Name</label>
-              <div class="input-group">
-                <input type="text" class="form-control" id="pulseName"
-                        value="Street Sweepers in Seattle: West Seattle">
-                <span class="input-group-btn">
-                  <button class="btn btn-default" type="button">
-                    <span class="glyphicon glyphicon-copy"></span> Copy
-                  </button>
-                </span>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="pulseSubsKey">Subsription Key</label>
-              <div class="input-group">
-                <input type="text" class="form-control" id="pulseSubsKey"
-                        value="4kdsjnfsaolfrlkbwerli23rg23u0mabflkb239p84">
-                <span class="input-group-btn">
-                  <button class="btn btn-default" type="button">
-                    <span class="glyphicon glyphicon-copy"></span> Copy
-                  </button>
-                </span>
-              </div>
-            </div>
-          </form>
-          <p>Anonymous API access to the Pulse is throttled. To activate unlimited access to this Pulse, <a href="#">request an unlimited Pulse token.</a></p>
-          <a href="#"><span class="glyphicon glyphicon-book"></span> Pulse documentation</a>
-        </div> <!-- modal-body -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div> <!-- Subsription Modal -->
+  <div class="modal fade" id="modalEmbed" tabindex="-1" role="dialog" aria-labelledby="modalEmbedLabel"></div>
+  <div class="modal fade" id="modalSubsribe" tabindex="-1" role="dialog" aria-labelledby="modalSubsribeLabel"></div>
+  <div class="modal fade" id="modalPulse" tabindex="-1" role="dialog" aria-labelledby="modalPulseLabel"></div>
 
 
   <!-- jQuery & Bootstrap-->
   <script src="./bower_components/jquery/dist/jquery.min.js"></script>
   <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- React Components -->
+  <script src="./build/Title.js"></script>
+  <script src="./build/Modalpulse.js"></script>
+  <script src="./build/Modalembed.js"></script>
+  <script src="./build/Modalsubscribe.js"></script>
+  <script src="./build/Detailstats.js"></script>
+  <script src="./build/Filter.js"></script>
+  <script src="./build/Map.js"></script>
+  <script src="./build/_main.js"></script>
+
   <script>
     L.mapbox.accessToken = 'pk.eyJ1Ijoib3NlbnNveSIsImEiOiIyNDg2NmI1YTgxYWM0M2UwNTI0NTEyYTdmM2ExNmJjZiJ9.pYrzm0PRW7hj1uDmy9UeKA';
     var mapboxTiles = L.tileLayer('https://{s}.tiles.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=' + L.mapbox.accessToken, {

@@ -9,6 +9,8 @@ bower install
 gulp
 ```
 
+This project is uses __browser-sync__ task. So you can conviniently test the page on seperate windows simultaneously (mobile vs. desktop experience) using the same port.
+
 ### This project includes:
 1. __ReactJS__ as the frontend UI library to render components.
 2. __Bootstrap__ is used as the responsive frontend framework.

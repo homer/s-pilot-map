@@ -1,16 +1,10 @@
-/*React.render(
-  <div>
-    <h3 className="comp-heading">Hello Component</h3>
-    <HelloWorld title="Hello React">
-      This is the detail paragraf for component
-    </HelloWorld>
+React.render(React.createElement(Title, null), document.getElementById('title-section'));
+React.render(React.createElement(Detailstats, null), document.getElementById('detailstats-section'));
 
-    <h3 className="comp-heading">Board Component (and has child note comp.)</h3>
-    <Board count={10} />
+React.render(React.createElement(Modalembed, null), document.getElementById('modalEmbed'));
+React.render(React.createElement(Modalsubscribe, null), document.getElementById('modalSubsribe'));
+React.render(React.createElement(Modalpulse, null), document.getElementById('modalPulse'));
 
-    <h3 className="comp-heading">Checkbox Component</h3>
-    <Checkbox />
+React.render(React.createElement(Filter, null), document.getElementById('filter-section'));
+React.render(React.createElement(Map, null), document.getElementById('map-section'));
 
-    <h3 className="comp-heading">MyComponent Component</h3>
-    <MyComponent />
-  </div>, document.body);*/
