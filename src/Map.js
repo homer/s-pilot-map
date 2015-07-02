@@ -13,6 +13,7 @@ var Map = React.createClass({
     )
   },
   componentDidMount : function() {
+    // Called after the component view is mounted. Listen for AJAX and Websocket events
     L.mapbox.accessToken = 'pk.eyJ1Ijoib3NlbnNveSIsImEiOiIyNDg2NmI1YTgxYWM0M2UwNTI0NTEyYTdmM2ExNmJjZiJ9.pYrzm0PRW7hj1uDmy9UeKA';
     var mapboxTiles = L.tileLayer(
       'https://{s}.tiles.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=' + L.mapbox.accessToken, {

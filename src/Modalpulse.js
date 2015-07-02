@@ -9,7 +9,7 @@ var Modalpulse = React.createClass({
               <h4 className="modal-title" id="modalPulseLabel">Related Pulses</h4>
             </div>
             <div className="modal-body">
-              {this.props.pulses.map(function(pulse){
+              {this.props.pulses.map(function(pulse, idx){
                 var catClass = "";
 
                 switch (pulse.cat) {
@@ -27,7 +27,7 @@ var Modalpulse = React.createClass({
                 }
 
                 return (
-                  <div className="media">
+                  <div className="media" key={ idx }>
                     <div className="media-left">
                       <a href="#" className={catClass}></a>
                     </div>

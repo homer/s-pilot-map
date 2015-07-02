@@ -1,4 +1,10 @@
 var Title = React.createClass({
+  propTypes : function() {
+    title : React.PropTypes.string.isRequired,
+    desc : React.PropTypes.string.isRequired,
+    embedLink : React.PropTypes.string.isRequired,
+    subsKey : React.PropTypes.string.isRequired
+  },
   render : function() {
     return (
       <div id="title-section" className="col-md-7 col-md-offset-1">
