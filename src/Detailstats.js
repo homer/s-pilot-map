@@ -1,4 +1,12 @@
 var Detailstats = React.createClass({
+  propTypes : function() {
+    updateTime : React.PropTypes.string.isRequired,
+    visits : React.PropTypes.string.isRequired,
+    permission : React.PropTypes.string.isRequired,
+    publisher : React.PropTypes.string.isRequired,
+    source : React.PropTypes.string.isRequired,
+    rPulses : React.PropTypes.array.isRequired
+  },
   render : function() {
     return (
       <span>
