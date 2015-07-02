@@ -1,6 +1,7 @@
 var Filter = React.createClass({displayName: "Filter",
   render : function() {
     return (
+      React.createElement("div", {id: "filter-section", className: "row row-filter"}, 
       React.createElement("div", {className: "dropdown col-md-10 col-md-offset-1"}, 
         "Neighborhood", 
         React.createElement("button", {type: "button", id: "dropdownMenu1", className: "btn btn-default dropdown-toggle", "data-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "true"}, 
@@ -14,6 +15,7 @@ var Filter = React.createClass({displayName: "Filter",
           React.createElement("li", null, React.createElement("a", {href: "#"}, "South Seattle")), 
           React.createElement("li", null, React.createElement("a", {href: "#"}, "West Seattle"))
         )
+      )
       )
     )
   }

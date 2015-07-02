@@ -1,7 +1,7 @@
 var Detailstats = React.createClass({displayName: "Detailstats",
   render : function() {
     return (
-      React.createElement("div", null, 
+      React.createElement("div", {id: "detailstats-section", className: "col-md-4 detail-stats"}, 
         React.createElement("table", {className: "table"}, 
           React.createElement("tbody", null, 
             React.createElement("tr", null, 

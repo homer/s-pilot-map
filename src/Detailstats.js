@@ -1,7 +1,7 @@
 var Detailstats = React.createClass({
   render : function() {
     return (
-      <div>
+      <div id="detailstats-section" className="col-md-4 detail-stats">
         <table className="table">
           <tbody>
             <tr>

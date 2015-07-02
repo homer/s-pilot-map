@@ -30,65 +30,39 @@
 
 <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="navbar-header col-md-offset-1">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">
-              Seattle
-            </a>
-          </div> <!-- navbar-header -->
-          <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#">Developers</a></li>
-              <li><a href="#">Customize</a></li>
-              <li>
-                <a href="#">
-                  <span class="glyphicon glyphicon-user"></span>
-                   PAM
-                </a>
-              </li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div><!-- row -->
-      </div>
-    </nav><!-- navbar -->
-
+  <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
-      <div class="upper-section row">
-        <div id="title-section" class="col-md-7 col-md-offset-1"></div>
-        <div id="detailstats-section" class="col-md-4 detail-stats"></div>
-      </div> <!-- upper-section row -->
+      <div class="row">
+        <div class="navbar-header col-md-offset-1">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            Seattle
+          </a>
+        </div> <!-- navbar-header -->
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Developers</a></li>
+            <li><a href="#">Customize</a></li>
+            <li>
+              <a href="#">
+                <span class="glyphicon glyphicon-user"></span>
+                 PAM
+              </a>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div><!-- row -->
+    </div>
+  </nav><!-- navbar -->
 
-      <div class="lower-section">
-
-        <div id="filter-section" class="row row-filter"></div>
-        <div id="map-section" class="row row-map"></div>
-
-        <div class="row row-footer">
-          <div class="col-md-3 col-md-offset-1">
-            <p class="text-muted">&copy; 2015 City of Seattle</p>
-          </div>
-          <div class="col-md-4 text-center">
-            <span class="socrata-footer-logo"></span>
-          </div>
-        </div> <!-- row-footer row -->
-
-      </div> <!-- lower-section -->
-
-    </div> <!-- container -->
-
-  <div class="modal fade" id="modalEmbed" tabindex="-1" role="dialog" aria-labelledby="modalEmbedLabel"></div>
-  <div class="modal fade" id="modalSubsribe" tabindex="-1" role="dialog" aria-labelledby="modalSubsribeLabel"></div>
-  <div class="modal fade" id="modalPulse" tabindex="-1" role="dialog" aria-labelledby="modalPulseLabel"></div>
-
+  <!-- Core React Application -->
+  <div id="app"></div>
 
   <!-- jQuery & Bootstrap-->
   <script src="./bower_components/jquery/dist/jquery.min.js"></script>
@@ -103,9 +77,5 @@
   <script src="./build/Map.js"></script>
   <script src="./build/_main.js"></script>
 
-  <script>
-
-
-  </script>
 </body>
 </html>

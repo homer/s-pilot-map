@@ -1,6 +1,7 @@
 var Filter = React.createClass({
   render : function() {
     return (
+      <div id="filter-section" className="row row-filter">
       <div className="dropdown col-md-10 col-md-offset-1">
         Neighborhood
         <button type="button" id="dropdownMenu1" className="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -14,6 +15,7 @@ var Filter = React.createClass({
           <li><a href="#">South Seattle</a></li>
           <li><a href="#">West Seattle</a></li>
         </ul>
+      </div>
       </div>
     )
   }
