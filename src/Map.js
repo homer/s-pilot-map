@@ -4,8 +4,8 @@ var Map = React.createClass({
       <div id="map-section" className="row row-map">
         <div className="map-container col-md-10 col-md-offset-1">
           <div className="map-header">
-            <h3>Street Sweepers in Seattle</h3>
-            <p>Streetsweepers by location. You can select a neighboorhood to see only street sweepers there, of select and track a streetsweeper by clickng it.</p>
+            <h3>{ this.props.title }</h3>
+            <p>{ this.props.desc }</p>
           </div>
           <div id="map"></div>
         </div>
